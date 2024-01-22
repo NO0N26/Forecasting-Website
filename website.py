@@ -4,13 +4,6 @@ import altair as alt
 import plotly.graph_objects as go
 import numpy as np
 
-# Set custom Streamlit theme
-st.set_page_config(
-    page_title="Root Crops Data",
-    page_icon="🌱",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
 
 def process_data(crop_file_path):
     df = pd.read_excel(crop_file_path)
@@ -102,7 +95,7 @@ def main():
     selected_interval = st.sidebar.selectbox('Select Forecasting Interval:', ['Monthly (12 months)', 'Weekly (10 weeks)'])
 
     if selected_crop in ['Carrot', 'Cassava', 'Gabi', 'Potato', 'Sweet Potato']:
-        file_path = f'C:/Users/Dennis C. Orozco jr/Desktop/research website/datasets/{selected_crop}.xlsx'
+        file_path = f'datasets/{selected_crop}.xlsx'
         df = process_data(file_path)
 
         # Display lowest and highest prices in separate columns

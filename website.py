@@ -132,7 +132,7 @@ def main():
     )
 
     if selected_interval == 'Monthly (12 months)':
-        monthly_sheet_path = f'C:/Users/Dennis C. Orozco jr/Desktop/research website/datasets/{selected_crop}.xlsx'
+        monthly_sheet_path = f'datasets/{selected_crop}.xlsx'
         df_monthly = pd.read_excel(monthly_sheet_path, sheet_name='monthly')
         df_monthly['Date'] = pd.to_datetime(df_monthly['Date']).dt.strftime('%Y-%m-%d')
         df_monthly.set_index('Date', inplace=True)
@@ -172,7 +172,7 @@ def main():
             st.plotly_chart(fig_monthly)
 
     elif selected_interval == 'Weekly (10 weeks)':
-        weekly_sheet_path = f'C:/Users/Dennis C. Orozco jr/Desktop/research website/datasets/{selected_crop}.xlsx'
+        weekly_sheet_path = f'datasets/{selected_crop}.xlsx'
         df_weekly = pd.read_excel(weekly_sheet_path, sheet_name='weekly')
         df_weekly['Date'] = pd.to_datetime(df_weekly['Date']).dt.strftime('%Y-%m-%d')
         df_weekly.set_index('Date', inplace=True)
